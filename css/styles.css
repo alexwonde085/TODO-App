@@ -4,19 +4,12 @@
   body{
     background-color: #9b59b6;
     font-family:sans-serif;
-    /* display: flex;
-    align-items: center;
-    justify-content: center;
-    min-height: 100vh;
-    margin: 0; */
   }
   
   .container{
     background-color: lightgray;
     border-radius: 20px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
-    /* width: 400px;
-    max-width:100%; */
   }
   
   .header{
@@ -55,67 +48,33 @@
     width: 100%;
   }
   
-  .form-control.success input{
-    border-color: #2ecc71;
-  }
-
-  .form-control.success textarea{
-    border-color: #2ecc71;
-  }
-  .form-control.success select{
-    border-color: #2ecc71;
-  }
-  
-  .form-control.error input {
-    border-color: #e74c3c;
-  }
-
-  .form-control.error textarea {
-    border-color: #e74c3c;
-  }
-  .form-control.error select {
-    border-color: #e74c3c;
-  }
-  
-
-  .form-control i{
+  .form i{
     position: absolute;
-    top: 40px;
-    right: 10px;visibility: hidden;
-  }
-  
-  .form-control.success i.fa-check-circle{
-    color: #2ecc71;
-    visibility: visible;
-  }
-  
-  .form-control.error i.fa-exclamation-circle{
-    color: #e74c3c;
-    visibility: visible;
-  }
-  
-  .form-control small{
+    top: 32px;
+    right: 10px;
     visibility: hidden;
+}
+.form small{
     position: absolute;
-    bottom: 0;
-    left: 0;
-  }
-  
-  .form-control.error small{
-    color: #e74c3c;
-    visibility: visible;
-  }
-  
-  .form button{
+    bottom: 0px;
+    left: 5px;
+    visibility: hidden; 
+}
+   #submit{
     background-color: #8e44ad;
-    border: 3px solid #8e44ad;
     border-radius: 10px;
     color: #fff;
     display: block;
     font-family: inherit;
-    font-size: 16px;
+    font-size: 18px;
     padding: 10px;
     width: 100%;
+    cursor: pointer;
+    outline: none;
+  }
+  #submit:hover{
+    background-color: #178be9;
+    color: #f0f0f0;
   }
   
   ul{
@@ -138,7 +97,7 @@
 
   h1{
       text-align: center;
-      font-size: 18px;
+      font-size: 20px;
       text-transform: uppercase;
       
   }
@@ -149,7 +108,7 @@
   }
 
   .inprogress{
-    background-color: rgb(23, 139, 233);
+    background-color: #178be9;
     color: black;
     font-size: 10px;
   }
@@ -157,4 +116,29 @@
     background-color: orange;
     color: black;
     font-size: 10px;
+  }
+  .main{
+      background-color: lightgray;
+  }
+  
+  #del{
+    color: #ff0000;
+    border-color: #ff0000;
+  } 
+  #markAsDone{
+    color: #008000;
+    border-color: #008000;
+  }
+  #del, #markAsDone{
+    font-size: 14px;
+    display: inline-block;
+  }
+
+  #markAsDone:hover{
+    background-color: #008000;
+    color: #fff;
+  }
+  #del:hover{
+    background-color: #ff0000;
+    color: #fff;
   }
