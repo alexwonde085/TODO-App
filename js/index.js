@@ -12,7 +12,7 @@ const error = document.getElementsByClassName('error');
 const button = document.getElementById('submit');
 
 const tl = document.querySelector('#tasksList');
-const markAsDone = document.getElementsByClassName('todo');
+const btns = document.getElementsByClassName('btn');
 
 const ntask = new TaskManager();
 
@@ -25,6 +25,7 @@ button.addEventListener('click', (e) =>{
   ntask.render();
   
   taskformInput.reset(); //Clear form
+  ntask.save();
 
 });
 
@@ -127,32 +128,35 @@ else {
 }
 
 tl.addEventListener('click', (event) => { 
-  
-    if (event.target.classList[1]==("done-button")) {
+    //Update Status
+    let et = event.target.classList[1];
+    if (et==("done-button")) {
 
-      let parentTask = event.target.parentElement;
-      let taskId = Number(parentTask.firstChild.dataset.taskId);
-      let task = newTask2.getTaskById(taskId);
-      task.status = "Done";
-      task.status.innerText = "Done";
-      //event.target.style.visibility = 'hidden';
-      //markAsDone.innerText = "Status: DONE";
-      console.log(parentTask);
+      let parentTask = event.target.parentElement.parentElement;
+      let header = parentTask.getElementsByClassName('card-header')[0].innerText;
+      let taskId = Number(header.split(" ")[1]);
+      ntask.tasks[taskId].status = "Done";
+      ntask.render();
+      console.log(markAsDone[0]);
+      markAsDone[0].style.visibility='hidden';
+      
     } 
+    // Delete Task
+    if (event.target.classList[1]==("delete-button")) {
+      let parentTask = event.target.parentElement.parentElement;
+      let header = parentTask.getElementsByClassName('card-header')[0].innerText;
+      
+      let taskId = Number(header.split(" ")[1]);
+      ntask.tasks.pop(ntask.tasks[taskId]);
+      //ntask.tasks.slice(ntask.tasks[taskId]);
+      localStorage.removeItem(taskId);
+      ntask.save();//////
+      ntask.render();
 
+    }
 });
 
 
-// let selected1 = event.target;
-//       let selectContainer = selected1.parentElement;
-
-//     if (selected1.classList.contains("done-button")) {
-//       let status = selectContainer.getElementsByClassName("status")[0];
-//       selected1.innerText = "Done";
-//       //selected1.style.visibility = 'hidden';
-//       markAsDone.innerText = "Status: DONE";
-      
-//     } 
 
 
 

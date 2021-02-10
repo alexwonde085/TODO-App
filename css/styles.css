@@ -142,3 +142,6 @@
     background-color: #ff0000;
     color: #fff;
   }
+  .done_btn{
+    visibility: hidden;
+  }

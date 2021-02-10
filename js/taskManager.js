@@ -47,12 +47,16 @@ class TaskManager{
          for(let i = 0; i < this.tasks.length; i++) {
         //    //Date Format
             let date = new Date();
-            let fDate = new Intl.DateTimeFormat('en-US', {
-                day: '2-digit',
-                month: '2-digit',
-                year: 'numeric'
-            });
-            let formattedDate = fDate.format(date)
+            // let fDate = new Intl.DateTimeFormat('en-US', {
+            //     day: '2-digit',
+            //     month: '2-digit',
+            //     year: 'numeric'
+            // });
+            // //console.log(this.tasks[i].dueDate);
+            // let date = new Date(this.tasks[i].dueDate);
+           // console.log(date);
+            let formattedDate = date.toLocaleDateString();
+           
             let taskHtml = createTaskHtml(this.tasks[i].id, this.tasks[i].name,
                 this.tasks[i].description,this.tasks[i].assignedTo, 
                 this.tasks[i].status,formattedDate);
@@ -63,15 +67,20 @@ class TaskManager{
         document.getElementById('tasksList').innerHTML = tasksHtml;
     }
 
+    //Save to local storage
     save(){
-        const tasksJson = JSON.stringify(this.tasks)
-        
-        const currentId = JSON.stringify(this.currentID)
-        localStorage.setItem(currentId, tasksJson)
+        const tasksJson = JSON.stringify(this.tasks);
+        //const  = JSON.stringify(this.currentID);
+        localStorage.setItem(this.tasks.length, tasksJson);
     }
 
-    load(){
 
+    load(){
+        const tasksJson = localStorage.getItem(this.currentId, this.tasks);
+        this.tasks = JSON.parse(tasksJson);
+        if(!tasksJson){
+            tasksJson = [];
+        }
     }
 }
 
