@@ -1,0 +1,23 @@
+{
+  "name": "final-project-g3",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha || true"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/alexwonde085/Final-Project-G3.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/alexwonde085/Final-Project-G3/issues"
+  },
+  "homepage": "https://github.com/alexwonde085/Final-Project-G3#readme",
+  "dependencies": {
+    "chai": "^4.3.0",
+    "mocha": "^8.3.0"
+  }
+}
