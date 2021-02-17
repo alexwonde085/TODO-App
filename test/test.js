@@ -9,7 +9,6 @@ describe('TaskManager', () => {
             const expectedResult = "object";
             const result = typeof task.addTask();
             assert.ok(result == expectedResult);
-            
         });
     });
 });

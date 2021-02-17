@@ -116,9 +116,8 @@ else {
 
 tl.addEventListener('click', (event) => { 
     //Update Status
-    let et = event.target.classList[1];
-    if (et==("done-button")) {
-
+    let e = event.target.classList[1];
+    if (e==("done-button")) {
       let parentTask = event.target.parentElement.parentElement;
       let header = parentTask.getElementsByClassName('card-header')[0].innerText;
       let taskId = Number(header.split(" ")[1]);
@@ -128,6 +127,7 @@ tl.addEventListener('click', (event) => {
       ntask.save();
       ntask.render();
     } 
+
     // Delete Task
     if (event.target.classList[1]==("delete-button")) {
       let parentTask = event.target.parentElement.parentElement;

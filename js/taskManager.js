@@ -5,9 +5,7 @@ const createTaskHtml = (id, tname, description, assignedTo, status, dueDate) => 
                 <div class="row row-cols-1 row-cols-md-3 mt-3 main">
                     <div class="col mb-3">
                         <div class="card h-100">
-                            <div class="card-header">
-                                Task ${id}
-                            </div>
+                            <div class="card-header"><p id="taskid" data-task-id=${id}>Task ${id}</p></div>
                             <div class="card-body">
                             <span id="doneStatus" class="text-white bg-danger text-right">${status}</span>
                                 <ul>
@@ -67,13 +65,32 @@ class TaskManager{
         let tasksHtml = tasksHtmlList.join('');
         document.getElementById('tasksList').innerHTML = tasksHtml;
     }
-
     //Save to local storage
     save(){
         localStorage.setItem("savedList", JSON.stringify(this.tasks));
     }
-}
 
+getTaskById(taskId) {
+    let foundTask;
+    for (let i = 0; i < this.tasks.length; i++) {
+        
+      if (this.tasks[i].Id == taskId) 
+      foundTask = this.tasks[i];
+    }
+    return foundTask;
+  }
+
+ deletTask(taskId) {
+    let newTasks = [];
+    for (let i = 0; i < this.tasks.length; i++) {
+
+      if (this.tasks[i].Id != taskId) {
+        newTasks.push(this.tasks[i]);
+      }
+    }
+    this.tasks = newTasks;
+  }
+}
 //Uncomment For unit testing
     // module.exports = {
     //     TaskManager: TaskManager
