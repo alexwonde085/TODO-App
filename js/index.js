@@ -60,8 +60,8 @@ let isValid = true;
 }
 else {
   description.style.borderColor = '';
-    error[1].style.visibility = 'hidden';
-    message[1].style.visibility = 'hidden';
+  error[1].style.visibility = 'hidden';
+  message[1].style.visibility = 'hidden';
 }
 
 //validate Assignto
@@ -145,3 +145,7 @@ tl.addEventListener('click', (event) => {
       location.reload();
     });
 
+
+
+
+   

@@ -9,22 +9,25 @@
     <link rel="stylesheet" href="CSS/styles.css">
   </head>
   <body>
-        <nav class="navbar navbar-expand-lg navbar-light sticky-top">
-            <a class="navbar-brand" href="#">ToDo</a>
+        <nav class="navbar navbar-expand-lg sticky-top bg-secondary">
+            <a class="navbar-brand text-success bg-white" href="#">todo</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav ml-auto">
                 <li class="nav-item active">
-                    <a class="nav-link" href="index.html">ToDo <span class="sr-only">(current)</span></a>
+                    <a class="nav-link" href="index.html">To Do <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a id="clear-all" class="nav-link">Clear Storage</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="about.html">About Us</a>
                 </li>
             </ul>
         </div>
-    </nav>
+        </nav>
     <div class="container">
         <div class="row">
             <div class="col">
@@ -35,24 +38,23 @@
                     <!-- Form start -->
                     <div class="card-body">
                         <form class="form" id="form"> 
-                            <!-- onsubmit="return false" -->
                             <div class="form-control">
                                 <label for="">Task Name</label>
-                                <input id="taskname" type="text" placeholder="task name">
+                                <input id="taskname" type="text" placeholder="task name ...">
                                 <i class="fas sucess">&#xf058;</i>
                                 <i class="fas error"> &#xf06a;</i>
                                 <small class="message">Error message</small>
                             </div>
                             <div class="form-control">
                                 <label for="">Description</label>
-                                <textarea id="description" rows="3" placeholder="Message ..."></textarea>
+                                <textarea id="description" rows="3" placeholder="desc ..."></textarea>
                                 <i class="fas sucess">&#xf058;</i>
                                 <i class="fas error"> &#xf06a;</i>
                                 <small class="message">Error message</small>
                             </div>
                             <div class="form-control">
                                 <label for="">Assign To</label>
-                                <input id="assignto" type="text" placeholder="assign to">
+                                <input id="assignto" type="text" placeholder="assign to ...">
                                 <i class="fas sucess">&#xf058;</i>
                                 <i class="fas error"> &#xf06a;</i>
                                 <small class="message">Error message</small>
@@ -66,7 +68,6 @@
                                             <option id="inProgress" class="status">In Progress</option> 
                                             <option id="pending" class="status">Pending</option>
                                             <option id="todo" class="status">ToDo</option>
-                                            <option id="review" class="status">Review</option>
                                         </select>
                                         <i class="fas sucess">&#xf058;</i>
                                         <i class="fas error"> &#xf06a;</i>
@@ -100,10 +101,6 @@
                 </div>
             </div>
         </div> 
-        <a id="clear-all" class="text-right">Clear Local Storage</a>
-        <footer class="bg-dark fixed-bottom">
-            <h6 class="text-white text-center">&copy; 2021 by Group 3</h6>
-        </footer>
     </div>
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>

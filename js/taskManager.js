@@ -38,7 +38,7 @@ class TaskManager{
       this.render();
       this.currentId = this.tasks.length;
     }
-    //If nothing is stored in local storage, set this.tasks array to an empty array.
+        //If nothing is stored in local storage, set this.tasks array to an empty array.
     else {
       this.tasks = [];
       this.currentId = currentId;
@@ -50,7 +50,7 @@ class TaskManager{
             name:tname, description:desc, 
             assignedTo:ass, status:status, 
             dueDate:dDate});
-            
+        return this.tasks;
     }
     render(){
         let tasksHtmlList = [];
@@ -74,6 +74,7 @@ class TaskManager{
     }
 }
 
-module.exports = {
-    TaskManager: TaskManager
-}
+//Uncomment For unit testing
+    // module.exports = {
+    //     TaskManager: TaskManager
+    // }

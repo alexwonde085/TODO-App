@@ -2,7 +2,8 @@
     box-sizing: border-box;
   }
   body{
-    background-color: #9b59b6;
+    background-color: #a0a398;
+    /* #9b59b6 */
     font-family:sans-serif;
   }
   
@@ -60,8 +61,8 @@
     left: 5px;
     visibility: hidden; 
 }
-   #submit{
-    background-color: #8e44ad;
+#submit{
+    background-color: #9658b1;
     border-radius: 10px;
     color: #fff;
     display: block;
@@ -71,7 +72,7 @@
     width: 100%;
     cursor: pointer;
     outline: none;
-  }
+}
   #submit:hover{
     background-color: #178be9;
     color: #f0f0f0;
@@ -94,12 +95,10 @@
     -ms-user-select: none;
     user-select: none;
   }
-
   h1{
       text-align: center;
       font-size: 20px;
-      text-transform: uppercase;
-      
+      text-transform: uppercase; 
   }
   .done{
     background-color: rgb(67, 184, 67);
@@ -120,7 +119,6 @@
   .main{
       background-color: lightgray;
   }
-  
   #del{
     color: #ff0000;
     border-color: #ff0000;
@@ -133,7 +131,6 @@
     font-size: 14px;
     display: inline-block;
   }
-
   #markAsDone:hover{
     background-color: #008000;
     color: #fff;
@@ -145,15 +142,15 @@
   .done_btn{
     visibility: hidden;
   }
- #clear-all{
-  background-color:#7a6089;
+  .nav-link{
+  /* background-color:#7a6089; */
   font-size: 16px;
-  color: #fff;
+  color: #fff !important;
   text-transform: uppercase;
   cursor: pointer;
   padding: 10px 6px 10px 30px;
-  border-radius: 14px;
-  text-align: right;
+  border-radius: 5px;
+  text-align: center;
  }
 
  .nav-link:hover{
@@ -162,13 +159,6 @@
 	font-size: 18px;
 
 }
-.navbar{
-	background-color: #46ada5c4
-}
-.nav-link{
-  color: #fff !important;
-  text-transform: uppercase;
-}
 .tasksHeader{
   border: green;
   background-color:#f0f0f0;
@@ -176,4 +166,10 @@
   text-align: center;
   border-radius: 5px;
   margin: 0 auto;
+}
+.table{
+  background-color: #f0f0f0;
+}
+.navbar-brand{
+  border-radius: 60px;
 }
