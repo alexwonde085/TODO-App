@@ -30,17 +30,17 @@ class TaskManager{
 
     constructor(currentId=0){
        //Check if there is anything saved in local storage. If there is set this.tasks array to the contents in local storage
-    let savedTaskList = localStorage.getItem("savedList");
-    if (savedTaskList) {
-      this.tasks = JSON.parse(savedTaskList);
-      this.render();
-      this.currentId = this.tasks.length;
-    }
+    // let savedTaskList = localStorage.getItem("savedList");
+    // if (savedTaskList) {
+    //   this.tasks = JSON.parse(savedTaskList);
+    //   this.render();
+    //   this.currentId = this.tasks.length;
+    //}
         //If nothing is stored in local storage, set this.tasks array to an empty array.
-    else {
+   // else {
       this.tasks = [];
       this.currentId = currentId;
-    }
+   // }
 }
      addTask(tname, desc, ass, status = "TODO", dDate){
             this.currentId ++;
@@ -92,6 +92,6 @@ getTaskById(taskId) {
   }
 }
 //Uncomment For unit testing
-    // module.exports = {
-    //     TaskManager: TaskManager
-    // }
+    module.exports = {
+        TaskManager: TaskManager
+    }
